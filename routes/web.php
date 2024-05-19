@@ -38,11 +38,11 @@ Route::get('employee/{departament}', 'App\Http\Controllers\UserController@getUse
 
 Route::get('/home', [DepartamentController::class, 'index']);
 
-Route::get('/dep', [DepartamentController::class, 'getDepartament']);
-Route::post('/add', [DepartamentController::class, 'create'])->name('add');
+// Route::get('/dep', [DepartamentController::class, 'getDepartament']);
+// Route::post('/add', [DepartamentController::class, 'create'])->name('add');
 
-// Route::get('dep',['uses'=>'App\Http\Controllers\DepartamentController@getDepartament'])->name('dep')->can('isAdmin');
-// Route::post('add',['uses'=>'App\Http\Controllers\DepartamentController@create'])->name('add')->can('isAdmin');
+Route::get('dep',['uses'=>'App\Http\Controllers\DepartamentController@getDepartament'])->name('dep')->can('isAdmin');
+Route::post('add',['uses'=>'App\Http\Controllers\DepartamentController@create'])->name('add')->can('isAdmin');
 
 
 // Update User
